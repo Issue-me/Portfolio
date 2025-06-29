@@ -1,0 +1,37 @@
+# 🧑‍💻 Ishal Prishika Chand - Software Engineer Portfolio
+
+Welcome to my personal software engineering portfolio! This web-based project highlights my professional background, skills, and projects. It is designed using modern frontend technologies like **HTML**, **CSS (TailwindCSS)**, and **Font Awesome**, with optional backend email functionality using **PHP**.
+
+---
+
+## 🌐 Live Demo
+
+> 🚀 Coming soon: [https://yourdomain.com](https://yourdomain.com)
+
+---
+
+## 📁 Project Structure
+
+```bash
+/
+├── home.html          # Main portfolio homepage
+├── send_email.php      # Handles form submissions (PHP-enabled hosting only)
+├── thankyou.html       # Confirmation page after form submission
+├── img/                # Images used in the portfolio (projects, personal photo)
+└── README.md           # This file
+
+Features
+✅ Responsive Design — Optimized for mobile, tablet, and desktop
+🎨 TailwindCSS — Utility-first design for quick layout and style control
+📬 Contact Form — Sends email via PHP or Formspree (configurable)
+🧠 Projects Section — Showcases major academic and personal projects
+🧾 Skills Matrix — Categorized technical skills for easy reference
+📸 Hero Image & Profile Info — Highlights personal branding and bio
+
+🛠 Technologies Used
+HTML5
+CSS3
+TailwindCSS
+Font Awesome
+PHP — For handling contact form submissions
+GitHub Pages — Deployment options
