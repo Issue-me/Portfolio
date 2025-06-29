@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --secondary: #1e293b;
+            --accent: #f59e0b;
+            --text: #f8fafc;
+            --bg: #0f172a;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            scroll-behavior: smooth;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill-badge {
+            transition: all 0.3s ease;
+        }
+
+        .skill-badge:hover {
+            transform: scale(1.05);
+            background-color: var(--primary);
+        }
+
+        .hero-image {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+<!-- Navigation -->
+<nav class="fixed w-full bg-slate-900/80 backdrop-blur-md z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <div class="flex items-center">
+                <span class="text-xl font-bold text-white">Portfolio</span>
+            </div>
+            <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-4">
+                    <a href="#home" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-white">Home</a>
+                    <a href="#about" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-white">About</a>
+                    <a href="#skills" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-white">Skills</a>
+                    <a href="#projects" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-white">Projects</a>
+                    <a href="#contact" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-white">Contact</a>
+                </div>
+            </div>
+            <div class="md:hidden">
+                <button class="mobile-menu-button p-2 rounded-md text-white focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm <span class="text-blue-400">Ishal Prishika Chand</span></h1>
+                <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-blue-300">Software Engineer</h2>
+                <p class="text-lg text-slate-300 mb-8 max-w-lg">
+                    I build meaningful and secure digital solutions tailored for education and community development by
+                    writing clean, efficient code and applying innovative approaches grounded in real-world needs across the Pacific region.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#projects" class="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg font-medium transition duration-300">View My Work</a>
+                    <a href="#contact" class="px-6 py-3 border border-blue-500 text-blue-400 hover:bg-blue-500/10 rounded-lg font-medium transition duration-300">Contact Me</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center hero-image">
+                <img src="img/1stpic.jpg" alt="Professional software engineer working on multiple monitors with code editor visible" class="rounded-full border-4 border-blue-500/30 w-64 h-64 md:w-80 md:h-80 object-cover" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-16 px-4 sm:px-6 lg:px-8 bg-slate-800/50">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-12 text-center">About <span class="text-blue-400">Me</span></h2>
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                <img src="img/my_pic.jpg" alt="Picture of software engineer in casual attire" class="rounded-lg shadow-xl w-64 h-80 object-cover" />
+            </div>
+            <div class="md:w-2/3 md:pl-12">
+                <h3 class="text-2xl font-semibold mb-4">Who I Am</h3>
+                <p class="text-slate-300 mb-6">
+                    I'm a passionate software engineer with 3 years of experience building web applications and solving complex problems.
+                    My journey in tech started when I started pursuing Bachelor's in Software Engineering in the University of the South
+                    Pacific.
+                </p>
+                <p class="text-slate-300 mb-6">
+                    I specialize in backend development using Java and Spring Boot, full-stack application design with MySQL, HTML, and
+                    CSS, and real-time systems using Python sockets and Tkinter. My experience includes algorithm optimization,
+                    cloud computing with AWS, secure authentication systems, and network and server configuration. I have also worked
+                    with the University of the South Pacific’s Cybersecurity division, focusing on penetration testing, policy
+                    development, and risk mitigation strategies tailored for the Pacific region.
+                </p>
+                <p class="text-slate-300 mb-8">
+                    When I'm not coding, you can find me dwelled into community volunteering, exploring cybersecurity case studies,
+                    mentoring first-year students, or participating in tech clubs and coding challenges. I believe in continuous learning
+                    and staying at the forefront of technology trends.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <div class="flex items-center">
+                        <i class="fas fa-map-marker-alt text-blue-400 mr-2"></i>
+                        <span class="text-slate-300">Suva, Fiji</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-envelope text-blue-400 mr-2"></i>
+                        <span class="text-slate-300">ishalprishikachand@gmail.com</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-phone text-blue-400 mr-2"></i>
+                        <span class="text-slate-300">+679 2764364</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-12 text-center">My <span class="text-blue-400">Skills</span></h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <!-- Programming Languages -->
+            <div class="bg-slate-800/50 p-6 rounded-xl">
+                <h3 class="text-xl font-semibold mb-4 text-blue-300 flex items-center">
+                    <i class="fas fa-code mr-2"></i> Languages
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="skill-badge px-3 py-1 bg-slate-700 rounded-full text-sm">JavaScript</span>
+                    <span class="skill-badge px-3 py-1 bg-slate-700 rounded-full text-sm">Python</span>
+                    <span class="skill-badge px-3 py-1 bg-slate-700 rounded-full text-sm">Java</span>
+                    <span class="skill-badge px-3 py-1 bg-slate-700 rounded-full text-sm">C</span>
+                    <span class="skill-badge px-3 py-1 bg-slate-700 rounded-full text-sm">C++</span>
+                </div>
+            </div>
+
+            <!-- Frontend -->
+            <div class="bg-slate-800/50 p-6 rounded-xl">
+                <h3 class="text-xl font-semibold mb-4 text-blue-300 flex items-center">
+                    <i class="fas fa-paint-brush mr-2"></i> Frontend
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="skill-badge px-3 py-1 bg-slate-700 rounded-full text-sm">HTML5</span>
+                    <span class="skill-badge px-3 py-1 bg-slate-700 rounded-full text-sm">CSS3</span>
+                </div>
+            </div>
+
+            <!-- Backend -->
+            <div class="bg-slate-800/50 p-6 rounded-xl">
+                <h3 class="text-xl font-semibold mb-4 text-blue-300 flex items-center">
+                    <i class="fas fa-server mr-2"></i> Backend
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="skill-badge px-3 py-1 bg-slate-700 rounded-full text-sm">Spring Boot</span>
+                    <span class="skill-badge px-3 py-1 bg-slate-700 rounded-full text-sm">.NET</span>
+                </div>
+            </div>
+
+            <!-- DevOps & Tools -->
+            <div class="bg-slate-800/50 p-6 rounded-xl">
+                <h3 class="text-xl font-semibold mb-4 text-blue-300 flex items-center">
+                    <i class="fas fa-cogs mr-2"></i> DevOps & Tools
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="skill-badge px-3 py-1 bg-slate-700 rounded-full text-sm">AWS</span>
+                    <span class="skill-badge px-3 py-1 bg-slate-700 rounded-full text-sm">Git</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-16 px-4 sm:px-6 lg:px-8 bg-slate-800/50">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-12 text-center">My <span class="text-blue-400">Projects</span></h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Project 1 -->
+            <div class="project-card bg-slate-800 rounded-xl overflow-hidden shadow-lg">
+                <div class="h-48 overflow-hidden">
+                    <img src="img/project1.png" alt="Image of a multi-threaded payroll system with added inputs" class="w-full h-full object-cover" />
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Multi-Threaded Payroll System</h3>
+                    <p class="text-slate-300 mb-4">
+                        Developed this system using threads to compute employee salaries with synchronization mechanisms like
+                        mutexes to prevent race conditions and ensure secure, concurrent processing.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-1 bg-blue-500/20 text-blue-300 rounded text-xs">C</span>
+                        <span class="px-2 py-1 bg-blue-500/20 text-blue-300 rounded text-xs">POSIX treads</span>
+                    </div>
+                    <div class="flex space-x-3">
+                        <a href="https://github.com/Issue-me/Multi-Threaded-Payroll-System" class="text-blue-400 hover:text-blue-300">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card bg-slate-800 rounded-xl overflow-hidden shadow-lg">
+                <div class="h-48 overflow-hidden">
+                    <img src="img/project2.png" alt="Image of real-time tutor-student socket attendance system running on command prompt" class="w-full h-full object-cover" />
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Real-Time Tutor-Student Socket Attendance System</h3>
+                    <p class="text-slate-300 mb-4">
+                        A Python-based real-time tutor-student attendance system using sockets and Tkinter that displays student ID, name,
+                        and port, and auto-updates attendance as students join or leave.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-1 bg-blue-500/20 text-blue-300 rounded text-xs">Python</span>
+                        <span class="px-2 py-1 bg-blue-500/20 text-blue-300 rounded text-xs">TKinter</span>
+                        <span class="px-2 py-1 bg-blue-500/20 text-blue-300 rounded text-xs">Sockets</span>
+                    </div>
+                    <div class="flex space-x-3">
+                        <a href="https://github.com/Issue-me/Real-Time_Tutor-Student_Attendance_System" class="text-blue-400 hover:text-blue-300">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card bg-slate-800 rounded-xl overflow-hidden shadow-lg">
+                <div class="h-48 overflow-hidden">
+                    <img src="img/project3.png" alt="Image of visa application management system for Australian immigration" class="w-full h-full object-cover" />
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Visa Application Management System</h3>
+                    <p class="text-slate-300 mb-4">
+                        This project is an application for managing visa applications for the Australian
+                        immigration department using a linked list. It tracks visa types, applicant details,
+                        and application status/results, with functions to display, filter, and remove
+                        applications based on outcomes, following strict inheritance and structure rules.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-1 bg-blue-500/20 text-blue-300 rounded text-xs">C++</span>
+                    </div>
+                    <div class="flex space-x-3">
+                        <a href="https://github.com/Issue-me/Visa-Application-Management-System" class="text-blue-400 hover:text-blue-300">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-12 text-center">Get In <span class="text-blue-400">Touch</span></h2>
+        <div class="flex flex-col md:flex-row gap-12">
+            <div class="md:w-1/2">
+                <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+                <p class="text-slate-300 mb-8">
+                    Feel free to reach out if you're looking for a developer, have a question, or just want to connect.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 mt-1">
+                            <i class="fas fa-envelope text-blue-400"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-medium">Email</h4>
+                            <p class="text-slate-400">ishalprishikachand@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 mt-1">
+                            <i class="fas fa-phone text-blue-400"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-medium">Phone</h4>
+                            <p class="text-slate-400">+679 2764364</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 mt-1">
+                            <i class="fas fa-map-marker-alt text-blue-400"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-medium">Location</h4>
+                            <p class="text-slate-400">Suva, Fiji</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <h4 class="text-lg font-medium mb-4">Follow Me</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/Issue-me" class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center hover:bg-blue-500 transition duration-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ishal-chand-628a45280/" class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center hover:bg-blue-500 transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://stackoverflow.com/users/27747910/ishal-chand?tab=profile" class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center hover:bg-blue-500 transition duration-300">
+                            <i class="fab fa-stack-overflow"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <form action="send_email.php" method="post" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-slate-300 mb-1">Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white" placeholder="Your Name">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-slate-300 mb-1">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white" placeholder="Your Email">
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-slate-300 mb-1">Subject</label>
+                        <input type="text" id="subject" name="subject" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white" placeholder="Subject">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-slate-300 mb-1">Message</label>
+                        <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white" placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="w-full px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg font-medium transition duration-300">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-slate-900 py-8 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <p class="text-slate-400">© <span id="year"></span> Ishal Prishika Chand. All rights reserved.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="https://github.com/Issue-me" class="text-slate-400 hover:text-blue-400 transition duration-300">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/ishal-chand-628a45280/" class="text-slate-400 hover:text-blue-400 transition duration-300">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://stackoverflow.com/users/27747910/ishal-chand?tab=profile" class="text-slate-400 hover:text-blue-400 transition duration-300">
+                    <i class="fab fa-stack-overflow"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Mobile menu toggle
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    if (mobileMenuButton) {
+        mobileMenuButton.addEventListener('click', () => {
+            const menu = document.querySelector('.md\\:block');
+            if (menu) {
+                menu.classList.toggle('hidden');
+                menu.classList.toggle('block');
+            }
+        });
+    }
+</script>
+</body>
+</html>
